@@ -4,7 +4,7 @@ Note: running a node even in snap (default) mode requires sufficient computation
 
 Once an ethereum node is synced in preferred mode (snap mode is sufficient), install nodejs following instructions here: https://nodejs.org/en/download/
 
-### get_block.js
+### get_block.js (computes EIP-1559 next block's base fee)
 The script connects to locally running node using "geth.ipc" located in your .ethereum folder which is generated at the directory where geth is running. You need to locate the file and replace "path_to_the_file" with the relevant directory path.
 
 To run code: `node get_block.js`
