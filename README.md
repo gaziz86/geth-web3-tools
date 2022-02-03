@@ -7,4 +7,4 @@ Once an ethereum node is synced in preferred mode (snap mode is sufficient), ins
 ### get_block.js
 The script connects to locally running node using "geth.ipc" located in your .ethereum folder which is generated at the directory where geth is running. You need to locate the file and replace "path_to_the_file" with the relevant directory path.
 
-To run code: $node get_block.js$
+To run code: 'node get_block.js'
