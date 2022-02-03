@@ -3,11 +3,7 @@ var Web3 = require('web3');
 var net = require('net');
 
 // initialize web3:
-var web3 = new Web3(new Web3.providers.IpcProvider("/home/gazon/.ethereum/geth.ipc", net));
-
-// set parameters
-const gasTarget = 15*10**6;
-const gasMax = 30*10**6;
+var web3 = new Web3(new Web3.providers.IpcProvider("path_to_the_file/geth.ipc", net));
 
 // define function
 async function get_block() {
@@ -23,12 +19,12 @@ async function get_block() {
 	if (parent_gasUsed > parent_gasTarget) {
 		base_fee_per_gas_delta = Math.max(base_fee_per_gas_delta, 1);
 	}
-	nextBaseFee1 = parent_baseFee + base_fee_per_gas_delta;
+	let nextBaseFee = parent_baseFee + base_fee_per_gas_delta;
 	console.log("parent_block:", parent_blockNum);
 	console.log("parent_baseFee:", parent_baseFee);
 	console.log("parent_gasUsed:", parent_gasUsed);
 	console.log("parent_gasLimit:", parent_gasLimit);
-	console.log("nextBaseFee1:", nextBaseFee1 / 10**9, "gwei");
+	console.log("nextBaseFee:", nextBaseFee / 10**9, "gwei");
 }
 
 // execute
